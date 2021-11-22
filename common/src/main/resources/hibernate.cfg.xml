@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.pool.size">20</property>
+		<property name="hibernate.connection.autocommit">true</property>
+		<property name="hibernate.jdbc.batch_size">20</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<!-- HikariCP -->
+		<property name="hibernate.connection.provider_class">com.zaxxer.hikari.hibernate.HikariConnectionProvider
+		</property>
+		<property name="hibernate.hikari.poolName">HikariPool-Azure</property>
+		<property name="hibernate.hikari.minimumIdle">5</property>
+		<property name="hibernate.hikari.maximumPoolSize">10</property>
+		<property name="hibernate.hikari.idleTimeout">30000</property>
+		<property name="hibernate.hikari.connectionTestQuery">SELECT 1</property>
+
+
+		<!-- EHCache -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+
+		<!-- SEARCH -->
+		<property name="hibernate.search.default.directory_provider">filesystem</property>
+		<property name="hibernate.search.default.indexBase">/var/lucene/indexes/5</property>
+
+		<mapping class="com.ossez.framework.common.models.orm.CarInventory"/>
+		<mapping class="com.ossez.framework.common.models.orm.CarReservation"/>
+
+		<event type="delete">
+			<listener class="com.ossez.framework.common.dao.DeleteEventListener" />
+		</event>
+	</session-factory>
+</hibernate-configuration>
