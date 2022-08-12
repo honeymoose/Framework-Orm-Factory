@@ -13,8 +13,6 @@
     <description>Demo for Framework Orm Factory Query Data</description>
     <url>https://github.com/honeymoose/Framework-Orm-Factory.git</url>
 
-
-
     <developers>
         <developer>
             <name>YuCheng Hu</name>
@@ -23,7 +21,7 @@
             <timezone>-5</timezone>
             <organization>Open Source</organization>
             <roles>
-                <role>Sr. Java Developer</role>
+                <role>Developer</role>
             </roles>
         </developer>
     </developers>
