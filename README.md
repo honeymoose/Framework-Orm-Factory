@@ -22,7 +22,6 @@ Java 代码使用的是 JDK 11。
 |--------|-----------------------------------------------|
 | 电子邮件   | [service@ossez.com](mailto:service@ossez.com) |
 | QQ 或微信 | 103899765                                     |
-| QQ 交流群 | 15186112                                      |
 | 社区论坛   | https://www.ossez.com/c/open-source/java/15   |
 
 # 公众平台
@@ -40,13 +39,14 @@ Java 代码使用的是 JDK 11。
 ![](https://cdn.ossez.com/img/cwikius/cwikus-qr-toutiao.png)
 
 ## 知乎
+
 请关注我们的知乎：https://www.zhihu.com/people/huyuchengus
 
 ## 快速导航
 
 在下面的表格中，我们列出了一些比较有用的 CWIKIUS 相关软件开发使用教程的导航，欢迎访问下面的链接获得更多的内容和参与讨论
 
-| 网站名称           | URL                                                    | NOTE                       | 
+| 网站名称           | URL                                                    | NOTE                       |
 |----------------|--------------------------------------------------------|----------------------------|
 | OSSEZ 社区       | [www.ossez.com](https://www.ossez.com/)                | 开放社区，欢迎注册参与讨论              |
 | WIKI 维基        | [www.cwiki.us](https://www.cwiki.us/)                  | 使用 Confluence 部署的 WIKI 知识库 |
