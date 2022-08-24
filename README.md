@@ -1,4 +1,12 @@
 # Framework-Orm-Factory
+因公司目前转型上面的需求，很多的项目都会逐步采用 Spring Boot 来做，更多的是会使用一个 ORM 的框架。
+
+以前我们都是使用 Hibernate 的，但是现在有了 JPA 的需求。
+
+因此，需要设置一个可以开箱即用的框架模板，只需要简单的一些配置就可以跑起来的那种，以便于快速的提供一些基础功能。
+
+这个项目的目的就是为了解决这个需求的。
+
 
 <p align="center">
     <a href="https://github.com/honeymoose">
