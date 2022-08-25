@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.usvisatrack.core.dao.model">
+	<class name="com.usvisatrack.common.data.core.dao.model.VisaStatusLog" table="visa_status_log" catalog="northtecom_usvisatrack">
+		<id name="id" type="java.lang.Long">
+			<column name="visa_status_log_id" />
+			<generator class="identity" />
+		</id>
+
+		<many-to-one class="com.usvisatrack.common.data.core.dao.model.Visa" fetch="select" name="visa">
+			<column name="visa_fk" not-null="true" />
+		</many-to-one>
+
+		<property name="visaStatus" column="visa_status">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.usvisatrack.common.data.core.dao.model.data.VisaStatus</param>
+			</type>
+		</property>
+
+		<property name="dateVisaLastUpdatedDate" type="date">
+			<column name="date_visa_last_updated" />
+		</property>
+
+		<property name="createDate" type="timestamp">
+			<column name="date_add" length="19" />
+		</property>
+
+		<property name="deleteDate" type="timestamp">
+			<column name="date_del" length="19" />
+		</property>
+	</class>
+</hibernate-mapping>

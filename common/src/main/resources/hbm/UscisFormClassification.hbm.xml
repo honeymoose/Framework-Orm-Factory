@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.usvisatrack.core.dao.model">
+	<class name="com.usvisatrack.common.data.core.dao.model.UscisFormClassification" table="uscis_form_classification" catalog="northtecom_usvisatrack">
+		<id name="id" type="long">
+			<column name="uscis_form_classification_id" />
+			<generator class="identity" />
+		</id>
+
+		<many-to-one class="com.usvisatrack.common.data.core.dao.model.UscisForm" name="uscisForm" column="uscis_form_fk" fetch="join" />
+
+		<property name="uscisFormClassificationTitle" type="string">
+			<column name="uscis_form_classification_title" length="1024" />
+		</property>
+
+		<property name="uscisFormClassificationName" type="string">
+			<column name="uscis_form_classification_name" length="1024" />
+		</property>
+	</class>
+</hibernate-mapping>

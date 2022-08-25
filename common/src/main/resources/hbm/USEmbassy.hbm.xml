@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.usvisatrack.core.dao.model">
+	<class name="com.usvisatrack.common.data.core.dao.model.USEmbassy" table="us_embassy" catalog="northtecom_usvisatrack">
+		<id name="id" type="java.lang.Long">
+			<column name="us_embassy_id" />
+			<generator class="identity" />
+		</id>
+
+		<property name="country" type="string">
+			<column name="country" length="16" />
+		</property>
+
+		<property name="city" type="string">
+			<column name="city" length="128" />
+		</property>
+
+	</class>
+</hibernate-mapping>

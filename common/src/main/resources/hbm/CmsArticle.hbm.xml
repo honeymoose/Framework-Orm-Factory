@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.usvisatrack.core.dao.model">
+	<class name="com.usvisatrack.common.data.core.dao.model.CmsArticle" table="cms_article" catalog="northtecom_usvisatrack">
+		<id name="id" type="java.lang.Long">
+			<column name="cms_article_id" />
+			<generator class="identity" />
+		</id>
+
+		<property name="rssArticleId" type="string">
+			<column name="rss_article_id" length="128" />
+		</property>
+
+		<property name="title" type="string">
+			<column name="title" length="256" />
+		</property>
+
+		<property name="summary" type="string">
+			<column name="summary" length="1024" />
+		</property>
+
+		<property name="content" type="string">
+			<column name="content" length="2048" />
+		</property>
+
+		<property name="rssDateUpdate" type="timestamp">
+			<column name="rss_date_upd" />
+		</property>
+
+
+		<property name="createDate" type="timestamp">
+			<column name="date_add" />
+		</property>
+
+		<property name="modifyDate" type="timestamp">
+			<column name="date_upd" />
+		</property>
+
+	</class>
+</hibernate-mapping>

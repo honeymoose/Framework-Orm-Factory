@@ -29,6 +29,24 @@
 		<mapping class="com.ossez.framework.common.models.orm.CarInventory"/>
 		<mapping class="com.ossez.framework.common.models.orm.CarReservation"/>
 
+		<!-- HBMs -->
+		<!--		<mapping resource="hbm/CheckeeVisa.hbm.xml" />-->
+		<!--		<mapping resource="hbm/CmsArticle.hbm.xml" />-->
+		<!--		<mapping resource="hbm/CmsArticleOssezContent.hbm.xml" />-->
+		<!--		<mapping resource="hbm/ConfApp.hbm.xml" />-->
+		<!--		<mapping resource="hbm/SocialMedia.hbm.xml" />-->
+		<!--		<mapping resource="hbm/SocialMediaLog.hbm.xml" />-->
+		<!--		<mapping resource="hbm/UscisCase.hbm.xml" />-->
+		<!--		<mapping resource="hbm/UscisCaseStatus.hbm.xml" />-->
+		<!--		<mapping resource="hbm/UscisForm.hbm.xml" />-->
+		<!--		<mapping resource="hbm/UscisFormClassification.hbm.xml" />-->
+		<!--		<mapping resource="hbm/UscisServiceCenter.hbm.xml" />-->
+		<!--		<mapping resource="hbm/USEmbassy.hbm.xml" />-->
+		<!--		<mapping resource="hbm/User.hbm.xml" />-->
+		<!--		<mapping resource="hbm/Visa.hbm.xml" />-->
+		<!--		<mapping resource="hbm/VisaClass.hbm.xml" />-->
+		<!--		<mapping resource="hbm/VisaStatusLog.hbm.xml" />-->
+
 		<event type="delete">
 			<listener class="com.ossez.framework.common.dao.DeleteEventListener" />
 		</event>

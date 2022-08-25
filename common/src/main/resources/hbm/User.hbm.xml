@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.usvisatrack.core.dao.model">
+	<class name="com.usvisatrack.common.data.jpa.custom.User" table="user" catalog="northtecom_usvisatrack">
+		<id name="id" type="long">
+			<column name="user_id" />
+			<generator class="identity" />
+		</id>
+
+		<property name="userName" type="string">
+			<column name="username" length="64" />
+		</property>
+
+		<property name="password" type="string">
+			<column name="password" length="255" />
+		</property>
+
+		<property name="email" type="string">
+			<column name="email" length="255" />
+		</property>
+
+		<property name="UserStatus" column="user_status">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.usvisatrack.common.data.core.dao.model.data.UserStatus</param>
+			</type>
+		</property>
+
+		<property name="dateRegistered" type="timestamp">
+			<column name="date_registered" />
+		</property>
+
+	</class>
+</hibernate-mapping>

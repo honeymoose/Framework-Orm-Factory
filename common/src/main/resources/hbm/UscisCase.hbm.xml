@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.usvisatrack.core.dao.model">
+	<class name="com.usvisatrack.common.data.core.dao.model.UscisCase" table="uscis_case" catalog="northtecom_usvisatrack">
+		<id name="id" type="long">
+			<column name="uscis_case_id" />
+			<generator class="identity" />
+		</id>
+
+		<many-to-one class="com.usvisatrack.common.data.core.dao.model.UscisForm" name="uscisForm" column="uscis_form_fk" fetch="join" />
+
+		<many-to-one class="com.usvisatrack.common.data.core.dao.model.UscisCaseStatus" name="uscisCaseStatus" column="uscis_case_status_fk"
+                     fetch="join" />
+
+		<property name="uscisCaseNumber" type="string">
+			<column name="uscis_case_number" length="24" />
+		</property>
+
+		<property name="dateUscisCaseReceived" type="date">
+			<column name="date_uscis_case_received" />
+		</property>
+
+		<property name="dateUscisCaseUpdated" type="date">
+			<column name="date_uscis_case_updated" />
+		</property>
+
+		<property name="createDate" type="timestamp">
+			<column name="date_add" />
+		</property>
+
+		<property name="modifyDate" type="timestamp">
+			<column name="date_upd" />
+		</property>
+	</class>
+</hibernate-mapping>

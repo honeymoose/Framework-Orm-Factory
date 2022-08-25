@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.usvisatrack.core.dao.model">
+	<class name="com.usvisatrack.common.data.core.dao.model.Visa" table="visa" catalog="northtecom_usvisatrack">
+		<id name="id" type="java.lang.Long">
+			<column name="visa_id" />
+			<generator class="identity" />
+		</id>
+
+
+		<many-to-one class="com.usvisatrack.common.data.jpa.custom.User" fetch="select" insert="true" name="user" update="true" lazy="proxy">
+			<column name="user_fk" not-null="true" />
+		</many-to-one>
+
+		<many-to-one class="com.usvisatrack.common.data.core.dao.model.USEmbassy" name="usEmbassy" column="us_embassy_fk" fetch="join" />
+		<many-to-one class="com.usvisatrack.common.data.core.dao.model.VisaClass" name="visaClass" column="visa_class_fk" fetch="join" />
+
+		<set cascade="all" name="visaStatusLogSet" table="visa_status_log" order-by="id desc" catalog="northtecom_usvisatrack"
+			inverse="true" lazy="false">
+			<key column="visa_fk" />
+			<one-to-many class="com.usvisatrack.common.data.core.dao.model.VisaStatusLog" />
+		</set>
+
+
+		<property name="ds160Code" type="string">
+			<column name="ds160_code" length="16" />
+		</property>
+
+		<property name="visaStatus" column="visa_status">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.usvisatrack.common.data.core.dao.model.data.VisaStatus</param>
+			</type>
+		</property>
+
+		<property name="visaEntry" column="visa_entry">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.usvisatrack.common.data.core.dao.model.data.VisaEntry</param>
+			</type>
+		</property>
+
+		<property name="major" type="string">
+			<column name="major" />
+		</property>
+
+		<property name="description" type="string">
+			<column name="description" />
+		</property>
+
+		<property name="dateVisaInterview" type="date">
+			<column name="date_visa_interview" />
+		</property>
+
+		<property name="dateVisaIssued" type="date">
+			<column name="date_visa_issued" />
+		</property>
+
+		<property name="dateVisaCheckCompleted" type="date">
+			<column name="date_visa_check_completed" />
+		</property>
+
+		<property name="createDate" type="timestamp">
+			<column name="date_add" length="19" />
+		</property>
+
+		<property name="modifyDate" type="timestamp">
+			<column name="date_upd" length="19" />
+		</property>
+	</class>
+</hibernate-mapping>

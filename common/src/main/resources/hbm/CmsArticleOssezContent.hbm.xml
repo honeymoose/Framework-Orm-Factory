@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.usvisatrack.core.dao.model">
+	<class name="com.usvisatrack.common.data.core.dao.model.CmsArticleOssezContent" table="bbsossez_portal_article_content" catalog="ossez_bbs">
+		<id name="id" type="java.lang.Long">
+			<column name="cid" />
+			<generator class="identity" />
+		</id>
+
+		<property name="aid" type="long">
+			<column name="aid" />
+		</property>
+
+		<property name="content" type="string">
+			<column name="content" length="2068" />
+		</property>
+	</class>
+</hibernate-mapping>

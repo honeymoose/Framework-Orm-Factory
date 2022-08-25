@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.usvisatrack.core.dao.model">
+	<class name="com.usvisatrack.common.data.core.dao.model.SocialMediaLog" table="social_media_log" catalog="northtecom_usvisatrack">
+		<id name="id" type="java.lang.Long">
+			<column name="social_media_log_id" />
+			<generator class="identity" />
+		</id>
+
+		<many-to-one class="com.usvisatrack.common.data.core.dao.model.SocialMedia" fetch="select" name="socialMedia">
+			<column name="social_media_fk" not-null="true" />
+		</many-to-one>
+		<many-to-one class="com.usvisatrack.common.data.core.dao.model.VisaStatusLog" fetch="select" name="visaStatusLog">
+			<column name="visa_status_log_fk" not-null="true" />
+		</many-to-one>
+
+
+		<property name="contentPublished" type="string">
+			<column name="content_published" length="1024" />
+		</property>
+
+		<property name="datePublished" type="timestamp">
+			<column name="date_published" />
+		</property>
+
+		<property name="responseUuid" type="string">
+			<column name="response_uuid" length="256" />
+		</property>
+
+		<property name="createDate" type="timestamp">
+			<column name="date_add" />
+		</property>
+	</class>
+</hibernate-mapping>
