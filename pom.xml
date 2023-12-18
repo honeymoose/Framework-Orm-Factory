@@ -50,7 +50,7 @@
         <log4j2.version>2.2</log4j2.version>
 
         <!-- APACHE COMMONS-->
-        <commons-io.version>2.11.0</commons-io.version>
+        <commons-io.version>2.15.1</commons-io.version>
         <commons-lang.version>2.6</commons-lang.version>
         <commons-lang3.version>3.11</commons-lang3.version>
         <commons-cli.version>1.4</commons-cli.version>
